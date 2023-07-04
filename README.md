@@ -1,46 +1,21 @@
-# Getting Started with Create React App
++ 盒子模型
++ npx
++ sass和scss
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+> css module
 
-In the project directory, you can run:
+CSS Module 是一种用于组织和管理 CSS 的模块化方法。它通过在 CSS 类名前添加模块名的方式，将样式限定在特定模块中，避免了全局命名冲突的问题。
 
-### `npm start`
+使用 CSS Module 时，我们需要在样式文件的命名上加上 `.module.css` 的后缀，例如 `styles.module.css`。然后，在 JavaScript 或 TypeScript 文件中，通过导入样式文件并使用导入的对象来引用样式。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```jsx
+import React from 'react';
+import styles from './styles.module.css';
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+function MyComponent() {
+  return <div className={styles.container}>Hello, world!</div>;
+}
+```
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+注意，在使用 CSS Module 时，样式类名是通过导入的对象 `styles` 来引用的，而不是直接写类名字符串。这样可以确保在编译时，类名会被自动转换成唯一的标识符，避免了全局命名冲突。
