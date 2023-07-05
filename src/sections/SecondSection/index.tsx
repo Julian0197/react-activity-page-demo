@@ -30,7 +30,7 @@ const tabs = [
   },
 ];
 
-const TAB_HEIGHT = 65
+const TAB_HEIGHT = 65;
 
 const SecondSection: FC = () => {
   const [activeTab, setActiveTab] = useState<string>("cartoon");
@@ -62,7 +62,7 @@ const SecondSection: FC = () => {
       const key = sectionEl.getAttribute("data-id") || "";
 
       if (top <= TAB_HEIGHT) {
-        setActiveTab(key)
+        setActiveTab(key);
       }
     });
   };
@@ -101,6 +101,17 @@ const SecondSection: FC = () => {
             <img src={tab.img} alt={tab.key} />
           </section>
         ))}
+      </div>
+
+      {/* 吸底按钮 */}
+      <div
+        className={classNames(styles.btnWrapper, { [styles.visible]: isFixed })}
+      >
+        <img src={LogoImage} alt="LOGO" />
+        {/* target=<blank 表示标签会在新的浏览器页面打开*/}
+        <a href="https://www.bilibili.com" target="_blank" rel="noreferrer">
+          <button>App 内打开</button>
+        </a>
       </div>
     </div>
   );

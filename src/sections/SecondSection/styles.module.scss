@@ -58,4 +58,42 @@
       border-radius: 6px;
     }
   }
+
+  // 底部
+  .btnWrapper {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 0 16px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    opacity: 0;
+    // 一开始开不到的时候，往下移动64px
+    transform: translateY(64px);
+    // 设置按钮在改变可见性和位置时的过渡效果，动画时间为0.3秒。
+    transition: opacity .3s transform .3s;
+    // z-index: -1; //可以用层级解决底部按钮invisible确能点击的问题
+
+    &.visible {
+      opacity: 1;
+      // z-index: 1;
+      transform: translateY(0);
+    }
+
+    img {
+      width: 100px;
+    }
+
+    button {
+      // 一般按钮的padding 上下8 左右16
+      padding: 8px 16px;
+      color: white;
+      background: #fb7299;
+      border-radius: 50px;
+      border: none;
+    }
+  }
 }
