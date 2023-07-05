@@ -1,5 +1,11 @@
 .thirdSection {
   img {
     width: 100%;
+    // & 表示img元素中class为comment的元素
+    & .comment {
+      // 移动端padding一般上下16px比较好看
+      padding: 16px;
+      border-radius: 20px;
+    }
   }
 }

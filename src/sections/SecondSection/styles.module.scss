@@ -6,9 +6,29 @@
     justify-content: space-around;
     
     li {
+      position: relative;
       color: white;
       // 去除ul的.
       list-style: none;
+
+      .line {
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 4px;
+        background: green;
+        opacity: 0;
+        // 元素在改变opacity属性后的过渡效果
+        transition: opacity .3s;
+
+        // line类不是visible类的父级
+        // & 表示 同时有line类和visible类的样式
+        &.visible {
+          opacity: 1;
+        }
+      }
     }
   }
 
